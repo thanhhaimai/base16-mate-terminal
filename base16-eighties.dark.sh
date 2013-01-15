@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Base16 Eighties - Gnome Terminal color scheme install script
-# Chris Kempson (http://chriskempson.com)
+# Base16 Chalk - Mate Terminal color scheme install script
+# Thanh Hai Mai (https://github.com/thanhhaimai)
 
 [[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="Base 16 Eighties"
 [[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="base-16-eighties"
-[[ -z "$GCONFTOOL" ]] && GCONFTOOL=gconftool
-[[ -z "$BASE_KEY" ]] && BASE_KEY=/apps/gnome-terminal/profiles
+[[ -z "$GCONFTOOL" ]] && GCONFTOOL="mateconftool-2"
+[[ -z "$BASE_KEY" ]] && BASE_KEY=/apps/mate-terminal/profiles
 
 PROFILE_KEY="$BASE_KEY/$PROFILE_SLUG"
 
@@ -34,7 +34,7 @@ glist_append() {
 }
 
 # Append the Base16 profile to the profile list
-glist_append string /apps/gnome-terminal/global/profile_list "$PROFILE_SLUG"
+glist_append string /apps/mate-terminal/global/profile_list "$PROFILE_SLUG"
 
 gset string visible_name "$PROFILE_NAME"
 gset string palette "#22dd22dd22dd:#339933993399:#551155115511:#774477336699:#aa0099ff9933:#dd33dd00cc88:#ee88ee66ddff:#ff22ff00eecc:#ff22777777aa:#ff9999115577:#ffffcccc6666:#9999cccc9999:#6666cccccccc:#66669999cccc:#cccc9999cccc:#dd2277bb5533"

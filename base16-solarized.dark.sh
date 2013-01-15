@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Base16 Solarized - Gnome Terminal color scheme install script
-# Ethan Schoonover (http://ethanschoonover.com/solarized)
+# Base16 Chalk - Mate Terminal color scheme install script
+# Thanh Hai Mai (https://github.com/thanhhaimai)
 
 [[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="Base 16 Solarized"
 [[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="base-16-solarized"
-[[ -z "$GCONFTOOL" ]] && GCONFTOOL=gconftool
-[[ -z "$BASE_KEY" ]] && BASE_KEY=/apps/gnome-terminal/profiles
+[[ -z "$GCONFTOOL" ]] && GCONFTOOL="mateconftool-2"
+[[ -z "$BASE_KEY" ]] && BASE_KEY=/apps/mate-terminal/profiles
 
 PROFILE_KEY="$BASE_KEY/$PROFILE_SLUG"
 
@@ -34,7 +34,7 @@ glist_append() {
 }
 
 # Append the Base16 profile to the profile list
-glist_append string /apps/gnome-terminal/global/profile_list "$PROFILE_SLUG"
+glist_append string /apps/mate-terminal/global/profile_list "$PROFILE_SLUG"
 
 gset string visible_name "$PROFILE_NAME"
 gset string palette "#000022bb3366:#007733664422:#558866ee7755:#665577bb8833:#883399449966:#9933aa11aa11:#eeeeee88dd55:#ffddff66ee33:#ddcc332222ff:#ccbb44bb1166:#bb5588990000:#885599990000:#22aaaa119988:#226688bbdd22:#66cc7711cc44:#dd3333668822"
